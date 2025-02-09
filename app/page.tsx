@@ -38,7 +38,7 @@ const Home = () => {
 	const [collapse, setCollapse] = useState(false);
 
 	return (
-		<main className="bg-fuchsia-700 relative h-screen w-screen">
+		<main className="bg-fuchsia-700 flex items-center justify-center relative h-screen w-screen">
 			<motion.div
 				animate={collapse ? "collapse" : "show"}
 				id="segments"
@@ -65,6 +65,18 @@ const Home = () => {
 					variants={itemVariants}
 				></motion.div>
 			</motion.div>
+
+			{collapse && (
+				<motion.img
+					alt="Profile picture for Bryan May"
+					animate={{ opacity: 1, scale: 1 }}
+					className="h-80 rounded-full object-cover object-top w-80"
+					initial={{ opacity: 0, scale: 0 }}
+					src="/images/profile.JPEG"
+					style={{backgroundSize: "contain"}}
+					transition={{ duration: 1 }}
+				/>
+			)}
 		</main>
 	);
 };
