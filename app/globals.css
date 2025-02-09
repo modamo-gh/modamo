@@ -21,17 +21,29 @@ body {
 }
 
 .clip-triangle-top {
+	background-image: url("/images/programming.jpg");
+	background-position: center top;
+	background-size: contain;
 	clip-path: polygon(0% 0%, 50% 50%, 100% 0%);
 }
 
 .clip-triangle-right {
+	background-image: url("/images/climbing.jpg");
+	background-position: right center;
+	background-size: contain;
 	clip-path: polygon(100% 0%, 50% 50%, 100% 100%);
 }
 
 .clip-triangle-bottom {
+	background-image: url("/images/gaming.jpg");
+	background-position: center bottom;
+	background-size: contain;
 	clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
 }
 
 .clip-triangle-left {
+	background-image: url("/images/comics.jpg");
+	background-position: left center;
+	background-size: contain;
 	clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
 }
