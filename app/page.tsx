@@ -82,10 +82,10 @@ const Home = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
 					>
-						Hi!👋🏾 I'm Bryan May, a developer from Baltimore. I spend
+						{`Hi!👋🏾 I'm Bryan May, a developer from Baltimore. I spend
 						my time building things, solving puzzles, and
 						occasionally getting stuck on a climbing wall or in a
-						great game.
+						great game.`}
 					</motion.p>
 				</div>
 			)}
