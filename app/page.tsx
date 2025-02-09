@@ -77,7 +77,7 @@ const Home = () => {
 						transition={{ duration: 1 }}
 					/>
 					<motion.p
-						className="font-semibold m-4 text-white text-lg"
+						className="font-semibold m-4 text-center text-lg text-white"
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
