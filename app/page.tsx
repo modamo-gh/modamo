@@ -38,7 +38,7 @@ const Home = () => {
 	const [collapse, setCollapse] = useState(false);
 
 	return (
-		<main className="bg-fuchsia-700 flex items-center justify-center relative h-screen w-screen">
+		<main className="bg-gradient-to-br from-rose-600 h-screen relative to-purple-600 via-fuchsia-600 w-screen">
 			<motion.div
 				animate={collapse ? "collapse" : "show"}
 				id="segments"
@@ -67,15 +67,27 @@ const Home = () => {
 			</motion.div>
 
 			{collapse && (
-				<motion.img
-					alt="Profile picture for Bryan May"
-					animate={{ opacity: 1, scale: 1 }}
-					className="h-80 rounded-full object-cover object-top w-80"
-					initial={{ opacity: 0, scale: 0 }}
-					src="/images/profile.JPEG"
-					style={{backgroundSize: "contain"}}
-					transition={{ duration: 1 }}
-				/>
+				<div className="flex flex-col h-full items-center justify-center w-full">
+					<motion.img
+						alt="Profile picture for Bryan May"
+						animate={{ opacity: 1, scale: 1 }}
+						className="h-80 w-80 rounded-full object-cover object-top ring-4 ring-white shadow-lg shadow-black/30"
+						initial={{ opacity: 0, scale: 0 }}
+						src="/images/profile.JPEG"
+						transition={{ duration: 1 }}
+					/>
+					<motion.p
+						className="font-semibold m-4 text-white text-lg"
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1 }}
+					>
+						Hi!👋🏾 I'm Bryan May, a developer from Baltimore. I spend
+						my time building things, solving puzzles, and
+						occasionally getting stuck on a climbing wall or in a
+						great game.
+					</motion.p>
+				</div>
 			)}
 		</main>
 	);
