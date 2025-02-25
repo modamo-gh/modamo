@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/Navbar";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -65,28 +66,30 @@ const Home = () => {
 					variants={itemVariants}
 				></motion.div>
 			</motion.div>
-
 			{collapse && (
-				<div className="flex flex-col h-full items-center justify-center w-full">
-					<motion.img
-						alt="Profile picture for Bryan May"
-						animate={{ opacity: 1, scale: 1 }}
-						className="h-80 w-80 rounded-full object-cover object-top ring-4 ring-white shadow-lg shadow-black/30"
-						initial={{ opacity: 0, scale: 0 }}
-						src="/images/profile.JPEG"
-						transition={{ duration: 1 }}
-					/>
-					<motion.p
-						className="font-semibold m-4 text-center text-lg text-white"
-						initial={{ opacity: 0, y: 10 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1 }}
-					>
-						{`Hi!👋🏾 I'm Bryan May, a developer from Baltimore. I spend
+				<div className="flex flex-col h-full w-full">
+					<Navbar />
+					<div className="flex flex-1 flex-col h-full items-center justify-center w-full">
+						<motion.img
+							alt="Profile picture for Bryan May"
+							animate={{ opacity: 1, scale: 1 }}
+							className="h-80 w-80 rounded-full object-cover object-top ring-4 ring-white shadow-lg shadow-black/30"
+							initial={{ opacity: 0, scale: 0 }}
+							src="/images/profile.JPEG"
+							transition={{ duration: 1 }}
+						/>
+						<motion.p
+							className="font-semibold m-4 text-center text-lg text-white"
+							initial={{ opacity: 0, y: 10 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}
+						>
+							{`Hi!👋🏾 I'm Bryan May, a developer from Baltimore. I spend
 						my time building things, solving puzzles, and
 						occasionally getting stuck on a climbing wall or in a
 						great game.`}
-					</motion.p>
+						</motion.p>
+					</div>
 				</div>
 			)}
 		</main>
