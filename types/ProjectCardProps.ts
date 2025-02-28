@@ -1,6 +1,7 @@
 export type ProjectCardProps = {
-    description: string;
+	description: string;
 	imageSource: string;
 	key: number;
+	stack: string[];
 	title: string;
 };

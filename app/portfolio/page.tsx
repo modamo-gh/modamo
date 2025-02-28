@@ -3,18 +3,22 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
 	{
-		description: "Project description",
+		description:
+			"A web app that helps Helldivers 2 player compare weapon stats against enemy armor values",
 		imageSource: "/images/diverprep.png",
+		stack: ["Next.js", "TailwindCSS", "Node.js", "PostgreSQL"],
 		title: "DiverPrep"
 	},
 	{
 		description: "Project description",
 		imageSource: "/images/diverprep.png",
+		stack: [],
 		title: "DiverPrep"
 	},
 	{
 		description: "Project description",
 		imageSource: "/images/diverprep.png",
+		stack: [],
 		title: "DiverPrep"
 	}
 ];
