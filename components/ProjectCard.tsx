@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 					src={imageSource}
 				/>
 			</div>
-			<div className="flex flex-col flex-1 justify-between">
+			<div className="flex flex-col flex-1 gap-2 justify-between">
 				<h3>{title}</h3>
 				<p className="italic">{description}</p>
 				<div className="flex flex-row justify-around">
@@ -34,26 +34,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 							className={`bg-opacity-50 p-2 rounded-md ${
 								badgeColors[index % badgeColors.length]
 							}`}
+							key={index}
 						>
 							{tech}
 						</p>
 					))}
 				</div>
 				<div className="flex flex-row justify-around">
-					{links.map((link) =>
+					{links.map((link, index) =>
 						link.includes("github") ? (
 							<a
+								aria-label="GitHub Repository"
 								href={link}
-								target="_blank"
+								key={index}
 								rel="noopener noreferrer"
+								target="_blank"
 							>
 								<FaGithub className="text-2xl" />
 							</a>
 						) : (
 							<a
+								aria-label="Live Project"
 								href={link}
-								target="_blank"
+								key={index}
 								rel="noopener noreferrer"
+								target="_blank"
 							>
 								<FaLink className="text-2xl" />
 							</a>
