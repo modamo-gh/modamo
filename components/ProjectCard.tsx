@@ -1,9 +1,11 @@
 import { ProjectCardProps } from "@/types/ProjectCardProps";
 import Image from "next/image";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
 	description,
 	imageSource,
+	links,
 	key,
 	stack,
 	title
@@ -36,6 +38,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 							{tech}
 						</p>
 					))}
+				</div>
+				<div className="flex flex-row justify-around">
+					{links.map((link) =>
+						link.includes("github") ? (
+							<a
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaGithub className="text-2xl" />
+							</a>
+						) : (
+							<a
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaLink className="text-2xl" />
+							</a>
+						)
+					)}
 				</div>
 			</div>
 		</div>

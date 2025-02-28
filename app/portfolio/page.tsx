@@ -6,18 +6,24 @@ const projects = [
 		description:
 			"A web app that helps Helldivers 2 player compare weapon stats against enemy armor values",
 		imageSource: "/images/diverprep.png",
+		links: [
+			"https://github.com/modamo-gh/diverPrep",
+			"https://diverprep.modamo.xyz/"
+		],
 		stack: ["Next.js", "TailwindCSS", "Node.js", "PostgreSQL"],
 		title: "DiverPrep"
 	},
 	{
 		description: "Project description",
 		imageSource: "/images/diverprep.png",
+		links: [],
 		stack: [],
 		title: "DiverPrep"
 	},
 	{
 		description: "Project description",
 		imageSource: "/images/diverprep.png",
+		links: [],
 		stack: [],
 		title: "DiverPrep"
 	}
