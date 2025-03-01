@@ -2,7 +2,8 @@ export type ProjectCardProps = {
 	description: string;
 	imageSource: string;
 	links: string[];
-	key: number;
+	key?: number;
+	onClick?: () => void;
 	stack: string[];
 	title: string;
 };
