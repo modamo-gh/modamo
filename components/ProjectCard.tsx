@@ -1,5 +1,6 @@
 import { ProjectCardProps } from "@/types/ProjectCardProps";
 import Image from "next/image";
+import { useState } from "react";
 import { FaGithub, FaLink } from "react-icons/fa";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	return (
 		<div
 			key={key}
-			className="bg-white/50 flex flex-col gap-2 backdrop-blur-lg rounded-lg h-96 text-white p-4"
+			className="bg-white/50 cursor-pointer flex flex-col gap-2 backdrop-blur-lg rounded-lg h-96 text-white p-4 hover:scale-105"
 		>
 			<div className="relative w-full h-64">
 				<Image
