@@ -23,19 +23,19 @@ const projects = [
 		imageSource: "/images/diverprep.png",
 		links: [],
 		stack: [],
-		title: "DiverPrep"
+		title: "abc"
 	},
 	{
 		description: "Project description",
 		imageSource: "/images/diverprep.png",
 		links: [],
 		stack: [],
-		title: "DiverPrep"
+		title: "xyz"
 	}
 ];
 
 const Portfolio = () => {
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 	const [selectedProject, setSelectedProject] = useState<ProjectCardProps>();
 
 	return (
@@ -55,7 +55,7 @@ const Portfolio = () => {
 			</div>
 			{isOpen && (
 				<ProjectModal
-					project={selectedProject!}
+					project={selectedProject}
 					onClick={() => setIsOpen(false)}
 				/>
 			)}
