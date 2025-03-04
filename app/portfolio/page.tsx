@@ -53,7 +53,7 @@ const Portfolio = () => {
 					/>
 				))}
 			</div>
-			{isOpen && (
+			{isOpen && selectedProject &&(
 				<ProjectModal
 					project={selectedProject}
 					onClick={() => setIsOpen(false)}
