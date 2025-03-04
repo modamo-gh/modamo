@@ -4,7 +4,7 @@ const Navbar = () => {
 	return (
 		<div className="flex justify-end p-4 w-full">
 			<Link href="/portfolio">
-				<p className="text-lg">Portfolio</p>
+				<p className="text-2xl">Portfolio</p>
 			</Link>
 		</div>
 	);
