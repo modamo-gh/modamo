@@ -9,7 +9,7 @@ import { useState } from "react";
 const projects = [
 	{
 		description:
-			"A web app that helps Helldivers 2 player compare weapon stats against enemy armor values",
+			"A web app that helps Helldivers 2 players compare weapon stats against enemy armor values",
 		imageSource: "/images/diverprep.png",
 		links: [
 			"https://github.com/modamo-gh/diverPrep",
@@ -19,18 +19,15 @@ const projects = [
 		title: "DiverPrep"
 	},
 	{
-		description: "Project description",
-		imageSource: "/images/diverprep.png",
-		links: [],
-		stack: [],
-		title: "abc"
-	},
-	{
-		description: "Project description",
-		imageSource: "/images/diverprep.png",
-		links: [],
-		stack: [],
-		title: "xyz"
+		description:
+			"A mobile app that helps track events, discover new shows, and receive reminders of events",
+		imageSource: "/images/spacedout.png",
+		links: [
+			"https://github.com/modamo-gh/spacedOut",
+			"https://apps.apple.com/us/app/spaced%C3%B8ut/id6742281431"
+		],
+		stack: ["React Native", "Node.js", "Express", "PostgreSQL"],
+		title: "S P A C E D O U T"
 	}
 ];
 
@@ -53,7 +50,7 @@ const Portfolio = () => {
 					/>
 				))}
 			</div>
-			{isOpen && selectedProject &&(
+			{isOpen && selectedProject && (
 				<ProjectModal
 					project={selectedProject}
 					onClick={() => setIsOpen(false)}

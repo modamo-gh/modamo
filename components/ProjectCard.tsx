@@ -1,6 +1,7 @@
 import { ProjectCardProps } from "@/types/ProjectCardProps";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { FaApple } from "react-icons/fa6";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
 	description,
@@ -11,6 +12,46 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	title
 }) => {
 	const badgeColors = ["bg-rose-600", "bg-fuchsia-600", "bg-purple-600"];
+
+	const getLinkWithIcon = (link: string, index: number) => {
+		if (link.includes("github")) {
+			return (
+				<a
+					aria-label="GitHub Repository"
+					href={link}
+					key={index}
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<FaGithub className="text-2xl" />
+				</a>
+			);
+		} else if (link.includes("apple")) {
+			return (
+				<a
+					aria-label="App Store Link"
+					href={link}
+					key={index}
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<FaApple className="text-2xl" />
+				</a>
+			);
+		} else {
+			return (
+				<a
+					aria-label="Live Project"
+					href={link}
+					key={index}
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<FaLink className="text-2xl" />
+				</a>
+			);
+		}
+	};
 
 	return (
 		<div
@@ -41,29 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 					))}
 				</div>
 				<div className="flex flex-row justify-around">
-					{links.map((link, index) =>
-						link.includes("github") ? (
-							<a
-								aria-label="GitHub Repository"
-								href={link}
-								key={index}
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								<FaGithub className="text-2xl" />
-							</a>
-						) : (
-							<a
-								aria-label="Live Project"
-								href={link}
-								key={index}
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								<FaLink className="text-2xl" />
-							</a>
-						)
-					)}
+					{links.map((link, index) => getLinkWithIcon(link, index))}
 				</div>
 			</div>
 		</div>
