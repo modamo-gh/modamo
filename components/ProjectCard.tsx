@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 			className="bg-white/50 cursor-pointer flex flex-col gap-2 backdrop-blur-lg rounded-lg h-96 text-white p-4 hover:scale-105"
 			onClick={onClick}
 		>
-			<div className="relative w-full h-64">
+			<div className="relative w-full h-1/2">
 				<Image
 					alt={""}
 					className="object-cover rounded-lg"
@@ -67,9 +67,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 				/>
 			</div>
 			<div className="flex flex-col flex-1 gap-2 justify-between">
-				<h3>{title}</h3>
-				<p className="italic">{description}</p>
-				<div className="flex flex-row justify-around">
+				<h3 className="flex-1">{title}</h3>
+				<p className="flex-1 italic">{description}</p>
+				<div className="flex flex-row flex-1 justify-around">
 					{stack.map((tech, index) => (
 						<p
 							className={`bg-opacity-50 p-2 rounded-md ${

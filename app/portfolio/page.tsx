@@ -28,6 +28,17 @@ const projects = [
 		],
 		stack: ["React Native", "Node.js", "Express", "PostgreSQL"],
 		title: "S P A C E D O U T"
+	},
+	{
+		description:
+			"A Baltimore event aggregator",
+		imageSource: "/images/bmoreToday.png",
+		links: [
+			"https://github.com/modamo-gh/bmoreToday",
+			"https://bmoretoday.modamo.xyz/"
+		],
+		stack: ["Next.js", "TailwindCSS", "Node.js", "PostgreSQL"],
+		title: "Bmore Today"
 	}
 ];
 
