@@ -2,10 +2,15 @@ import Link from "next/link";
 
 const Navbar = () => {
 	return (
-		<div className="flex justify-end p-4 w-full">
-			<Link href="/portfolio">
-				<p className="text-2xl">Portfolio</p>
-			</Link>
+		<div className="justify-end flex w-full">
+			<div className="flex gap-4 justify-between p-4 w-fit">
+				<Link href="/blog">
+					<p className="text-2xl">Blog</p>
+				</Link>
+				<Link href="/portfolio">
+					<p className="text-2xl">Portfolio</p>
+				</Link>
+			</div>
 		</div>
 	);
 };
