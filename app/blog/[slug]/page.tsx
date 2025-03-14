@@ -4,7 +4,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
-	const post = getPostBySlug(params.slug);
+	const post = await getPostBySlug(params.slug);
 
 	if (!post) {
 		return notFound();

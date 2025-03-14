@@ -19,7 +19,7 @@ export const getAllPosts = () => {
 	});
 };
 
-export const getPostBySlug = (slug: string) => {
+export const getPostBySlug = async (slug: string) => {
 	const filePath = path.join(postsDirectory, `${slug}.md`);
 	const fileContents = fs.readFileSync(filePath, "utf8");
 	const { data, content } = matter(fileContents);
