@@ -14,6 +14,8 @@ export const getAllPosts = () => {
 
 		return {
 			slug: filename.replace(".md", ""),
+			title: data.title,
+			date: data.date,
 			...data
 		};
 	});

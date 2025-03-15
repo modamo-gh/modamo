@@ -1,10 +1,23 @@
 import { getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
+import { JSX } from "react";
 import { remark } from "remark";
 import html from "remark-html";
 
-const BlogPost = async ({ params }: { params: { slug: string } }) => {
-	const post = await getPostBySlug(params.slug);
+type Params = Promise<{ date: string; slug: string; title: string }>;
+
+const BlogPost = async ({
+	params
+}: {
+	params: Params;
+}): Promise<JSX.Element> => {
+	const { date, slug, title } = await params;
+
+	if (!slug) {
+		return notFound();
+	}
+
+	const post = await getPostBySlug(slug);
 
 	if (!post) {
 		return notFound();
@@ -15,8 +28,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
 
 	return (
 		<main className="p-8">
-			<h1 className="text-3xl font-bold">{post.title}</h1>
-			<p className="text-gray-500">{post.date}</p>
+			<h1 className="text-3xl font-bold">{title}</h1>
+			<p className="text-gray-500">{date}</p>
 			<div
 				className="mt-4 prose"
 				dangerouslySetInnerHTML={{ __html: contentHTML }}
