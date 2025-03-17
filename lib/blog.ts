@@ -28,6 +28,8 @@ export const getPostBySlug = async (slug: string) => {
 
 	return {
 		slug,
+		title: data.title,
+		date: data.date,
 		...data,
 		content
 	};

@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { JSX } from "react";
@@ -11,7 +12,7 @@ const BlogPost = async ({
 }: {
 	params: Params;
 }): Promise<JSX.Element> => {
-	const { date, slug, title } = await params;
+	const { slug } = await params;
 
 	if (!slug) {
 		return notFound();
@@ -27,13 +28,15 @@ const BlogPost = async ({
 	const contentHTML = processedContent.toString();
 
 	return (
-		<main className="p-8">
-			<h1 className="text-3xl font-bold">{title}</h1>
-			<p className="text-gray-500">{date}</p>
-			<div
-				className="mt-4 prose"
-				dangerouslySetInnerHTML={{ __html: contentHTML }}
-			/>
+		<main className="bg-gradient-to-br flex flex-col from-rose-600 min-h-screen relative to-purple-600 via-fuchsia-600 w-full">
+			<Navbar />
+			<div className="bg-white/50 flex flex-col rounded-lg min-h-full text-white p-4 m-4">
+				<h1 className="text-3xl font-bold">{post.title}</h1>
+				<div
+					className="mt-4 prose-lg prose-a:underline prose-li:list-disc text-white"
+					dangerouslySetInnerHTML={{ __html: contentHTML }}
+				/>
+			</div>
 		</main>
 	);
 };

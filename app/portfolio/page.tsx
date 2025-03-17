@@ -49,7 +49,7 @@ const Portfolio = () => {
 	return (
 		<main className="bg-gradient-to-br flex flex-col from-rose-600 h-screen relative to-purple-600 via-fuchsia-600 w-screen">
 			<Navbar />
-			<div className="grid grid-cols-3 gap-4 px-4 flex-1 overflow-y-auto overflow-x-hidden">
+			<div className="grid grid-cols-3 gap-4 px-4 pt-4 flex-1 overflow-y-auto overflow-x-hidden">
 				{projects.map((project, index) => (
 					<ProjectCard
 						key={index}
