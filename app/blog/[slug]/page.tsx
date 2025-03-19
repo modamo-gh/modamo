@@ -1,11 +1,31 @@
 import Navbar from "@/components/Navbar";
 import { getPostBySlug } from "@/lib/blog";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JSX } from "react";
 import { remark } from "remark";
 import html from "remark-html";
 
 type Params = Promise<{ date: string; slug: string; title: string }>;
+
+export const generateMetadata = async ({
+	params
+}: {
+	params: Params;
+}): Promise<Metadata> => {
+	const { slug } = await params;
+
+	const post = await getPostBySlug(slug);
+
+	if (!post) {
+		return { title: "Blog | Modamo" };
+	}
+
+	return {
+		title: `${post.title} | Modamo`,
+		description: post.content.slice(0, 150) + "..."
+	};
+};
 
 const BlogPost = async ({
 	params
