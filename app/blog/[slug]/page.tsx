@@ -3,8 +3,10 @@ import { getPostBySlug } from "@/lib/blog";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JSX } from "react";
+import rehypeRaw from "rehype-raw";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkRehype from "remark-rehype";
 
 type Params = Promise<{ date: string; slug: string; title: string }>;
 
@@ -44,7 +46,11 @@ const BlogPost = async ({
 		return notFound();
 	}
 
-	const processedContent = await remark().use(html).process(post.content);
+	const processedContent = await remark()
+		.use(remarkRehype, { allowDangerousHtml: true })
+		.use(rehypeRaw)
+		.use(html)
+		.process(post.content);
 	const contentHTML = processedContent.toString();
 
 	return (
