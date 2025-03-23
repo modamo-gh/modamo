@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JSX } from "react";
 import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
 import { remark } from "remark";
-import html from "remark-html";
 import remarkRehype from "remark-rehype";
 
 type Params = Promise<{ date: string; slug: string; title: string }>;
@@ -49,7 +49,7 @@ const BlogPost = async ({
 	const processedContent = await remark()
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeRaw)
-		.use(html)
+		.use(rehypeStringify)
 		.process(post.content);
 	const contentHTML = processedContent.toString();
 
